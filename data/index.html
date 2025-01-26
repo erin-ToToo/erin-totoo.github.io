@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 管理系統</title>
+    <script>
+        let ws;
+
+        // 初始化 WebSocket 監聽進度
+        function initWebSocket() {
+            ws = new WebSocket("ws://localhost:3001");
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                document.getElementById("status").innerText = data.status;
+            };
+        }
+
+        async function uploadFile() {
+            const fileInput = document.getElementById("file");
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            await fetch("/upload", { method: "POST", body: formData });
+            alert("圖片上傳成功");
+        }
+
+        async function saveJson() {
+            const content = document.getElementById("jsonInput").value;
+            await fetch("/save", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ filename: "data.json", content: JSON.parse(content) }),
+            });
+            alert("JSON 儲存成功");
+        }
+
+        async function pushToGit() {
+            await fetch("/push", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }
+            });
+        }
+
+        window.onload = initWebSocket;
+    </script>
+</head>
+
+<body>
+    <h2>GitHub Pages 管理系統</h2>
+
+    <h3>圖片上傳</h3>
+    <input type="file" id="file">
+    <button onclick="uploadFile()">上傳</button>
+
+    <h3>JSON 編輯</h3>
+    <textarea id="jsonInput" rows="5" cols="50">{ "message": "Hello World" }</textarea>
+    <br>
+    <button onclick="saveJson()">儲存 JSON</button>
+
+    <h3>Git 操作</h3>
+    <button onclick="pushToGit()">推送到 GitHub</button>
+    <p id="status">狀態：等待操作...</p>
+</body>
+
+</html>
