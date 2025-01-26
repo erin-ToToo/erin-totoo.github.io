@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'ARMingB5Bold';
+    src: url('./font/ARMingB5Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ARMingB5ExtraBold';
+    src: url('./font/ARMingB5ExtraBold.otf') format('opentype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ARMingB5Heavy';
+    src: url('./font/ARMingB5Heavy.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ARMingB5Light';
+    src: url('./font/ARMingB5Light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ARMingB5Medium';
+    src: url('./font/ARMingB5Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ARMingB5Ultra';
+    src: url('./font/ARMingB5Ultra.otf') format('opentype');
+    font-weight: 1000;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baskerville';
+    src: url('font/Baskerville-01.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BaskervilleBold';
+    src: url('font/Baskerville-Bold-02.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BaskervilleBoldItalic';
+    src: url('font/Baskerville-BoldItalic-05.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BaskervilleItalic';
+    src: url('font/Baskerville-Italic-03.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BaskervilleSemiBold';
+    src: url('font/Baskerville-SemiBold-06.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BaskervilleSemiBoldItalic';
+    src: url('font/Baskerville-SemiBoldItalic-04.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'BaskervilleCyrLTStd';
+    src: url('./font/BaskervilleCyrLTStd-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jf-jinxuan-fresh2.2';
+    src: url('./font/jf-jinxuan-fresh2.2.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
