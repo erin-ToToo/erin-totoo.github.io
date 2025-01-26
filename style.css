@@ -21,10 +21,16 @@ section {
 article,
 header {
   height: 100dvh;
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-snap-align: start;
 }
 
 section {
   display: none;
+  scroll-snap-align: start;
 }
 
 .carousel {
