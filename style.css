@@ -2,7 +2,7 @@
 
 html,
 body {
-  height: 100dvh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   -ms-overflow-style: none;
@@ -12,7 +12,7 @@ body {
 article,
 header,
 section {
-  width: 100dvw;
+  width: 100vw;
   position: relative;
   background-image: url(./img/background/Background.jpg);
   background-repeat: repeat;
@@ -20,7 +20,7 @@ section {
 
 article,
 header {
-  height: 100dvh;
+  height: 100vh;
   scroll-snap-type: y mandatory;
   overflow: scroll;
   -ms-overflow-style: none;
