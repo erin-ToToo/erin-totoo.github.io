@@ -1,10 +1,4 @@
 $(document).ready(function () {
-    fetch("content.json")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.cover_carousel[0])
-        })
-        .catch(err => console.error("load json fail", err));
 
     let currentIndex = 0;
     const images = $('.carousel img');
