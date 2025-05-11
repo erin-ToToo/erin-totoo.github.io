@@ -1,22 +1,11 @@
 $(document).ready(function () {
-    gsap.to(
-        "#erin-logo",
-        {
-            keyframes: [
-                { opacity: 1, duration: .5, ease: "circ.in" }
-            ]
-        }
-    );
+    // 首頁Logo動態進場
 
-    // gsap.to(
-    //     ".carousel_cover",
-    //     {
-    //         keyframes: [
-    //             { opacity: 1, duration: 2.5, },
-    //             { opacity: .65, duration: 1, ease: "circ.out" }
-    //         ]
-    //     }
-    // );
+    gsap.fromTo(
+        "#erin-logo",
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: "back.out" }
+    );
 
     gsap.fromTo(
         "#logo-06",
@@ -54,8 +43,33 @@ $(document).ready(function () {
         { y: 0, opacity: 1, duration: 1 }
     );
 
-    // gsap.delayedCall(4, () => {
-    //     document.getElementById("section1").style.display = "flex";
-    //     document.getElementById("section1").style.height = "100dvh";
-    // });
+    //點擊「開始瀏覽」
+
+    const start_btn = document.getElementById("start_btn");
+    const landing = document.getElementById("landing");
+    const main = document.getElementById("main");
+    const fadeItems = document.querySelectorAll("#main .fade-item");
+    start_btn.addEventListener("click", () => {
+
+        landing.style.display = "none";
+        main.style.display = "flex";
+
+        // main 整體淡入
+        gsap.from(main, {
+            duration: 1,
+            opacity: 0,
+            y: "100vh",
+            ease: "power2.out"
+        });
+
+        // 依序淡入內容
+        gsap.to(fadeItems, {
+            opacity: 1,
+            delay: .7,
+            y: 0,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power2.out"
+        });
+    });
 });

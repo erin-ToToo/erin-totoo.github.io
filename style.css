@@ -9,18 +9,17 @@ body {
   scrollbar-width: none;
 }
 
-article,
-header,
-section {
+article>section {
   width: 100vw;
   position: relative;
   background-image: url(./img/background/Background.jpg);
   background-repeat: repeat;
 }
 
-article,
-header {
-  height: 100vh;
+
+header,
+section {
+  height: 100dvh;
   scroll-snap-type: y mandatory;
   overflow: scroll;
   -ms-overflow-style: none;
@@ -34,11 +33,11 @@ section {
 }
 
 .carousel {
-  width: 100%;
-  height: 100%;
+  width: 100dvw;
+  height: 100dvh;
   position: absolute;
   overflow: hidden;
-  background-color: #ffffff;
+  z-index: -999;
 }
 
 .carousel img {
@@ -62,16 +61,16 @@ section {
 .carousel_cover {
   opacity: .5;
   background-color: #000000;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .cover {
-  width: 400px;
-  height: 600px;
+  width: clamp(300px, 50vw, 400px);
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -86,6 +85,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 #cross {
@@ -99,8 +99,8 @@ section {
 #logo-07,
 #logo-08,
 #logo-09 {
-  width: 123px;
-  height: 123px;
+  width: clamp(60px, 10vw, 123px);
+  height: auto;
   filter: drop-shadow(0px 0px 10px #000);
   justify-self: center;
   -o-object-fit: contain;
@@ -124,13 +124,12 @@ section {
 }
 
 #erin-logo {
-  position: absolute;
-  top: 3%;
-  left: 3%;
-  width: 350px;
+  width: clamp(150px, 100vw, 350px);
+  height: auto;
   -o-object-fit: contain;
   object-fit: contain;
   opacity: 0;
+  z-index: 1;
 }
 
 #section-01 {
@@ -139,8 +138,8 @@ section {
   object-fit: contain;
 }
 
-#section1 {
-  display: flex;
+#main {
+  /* display: flex; */
   height: 100dvh;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -157,14 +156,14 @@ section {
 }
 
 #section1-title {
-  font-size: 5rem;
+  font-size: 4.5rem;
   margin: 0;
   font-family: 'Book Antiqua';
   text-wrap: nowrap;
 }
 
 #section1-subtitle {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: 'ARMingB5Heavy';
 }
 
@@ -194,9 +193,26 @@ section {
   word-break: break-word;
 }
 
+.fade-item {
+  opacity: 0;
+}
+
+.menu-container {
+  height: clamp(80px, 20vw, 100px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  background-color: #ffffff;
+  width: clamp(768px, 90vw, 1920px);
+  height: 100%;
+}
+
 @media (max-width: 1400px) {
 
-  #section1 {
+  #main {
     align-content: center;
     justify-content: center;
   }
@@ -224,29 +240,7 @@ section {
 
 @media (max-width: 768px) {
 
-  #logo-06,
-  #logo-07,
-  #logo-08,
-  #logo-09 {
-    width: 60px;
-    height: 60px;
-  }
-
-  #cross {
-    width: 90px;
-    height: 90px;
-  }
-
-  .cover {
-    width: 200px;
-    height: 300px;
-  }
-
-  #erin-logo {
-    width: 175px;
-  }
-
-  #section1 {
+  #main {
     align-content: center;
     justify-content: center;
   }
