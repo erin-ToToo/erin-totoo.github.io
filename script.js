@@ -33,4 +33,9 @@ $(document).ready(function () {
         currentIndex = (currentIndex + 1) % imageCount;
         images.eq(currentIndex).addClass('active');
     }
-});//
+
+    $('.menu-toggle').on('click', function () {
+        $('.menu').toggleClass('active');
+    });
+
+});

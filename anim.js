@@ -43,26 +43,24 @@ $(document).ready(function () {
         { y: 0, opacity: 1, duration: 1 }
     );
 
-    //點擊「開始瀏覽」
 
+    //點擊「開始瀏覽」
     const start_btn = document.getElementById("start_btn");
     const landing = document.getElementById("landing");
-    const main = document.getElementById("main");
-    const fadeItems = document.querySelectorAll("#main .fade-item");
+    const sections = document.querySelectorAll("section");
+    const fadeItems = document.querySelectorAll(".fade-item");
     start_btn.addEventListener("click", () => {
 
         landing.style.display = "none";
-        main.style.display = "flex";
+        sections.forEach(e => e.style.display = "flex");
 
-        // main 整體淡入
-        gsap.from(main, {
+        gsap.from(sections, {
             duration: 1,
             opacity: 0,
             y: "100vh",
             ease: "power2.out"
         });
 
-        // 依序淡入內容
         gsap.to(fadeItems, {
             opacity: 1,
             delay: .7,
