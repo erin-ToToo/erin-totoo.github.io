@@ -9,8 +9,11 @@
 }
 
 .zh-large,
-.submenu>a {
-  font-family: 'ARMingB5Heavy';
+.submenu>a,
+h2,
+h3 {
+  font-family: 'ARMingB5Heavy' !important;
+  margin: 0;
 }
 
 .en-small {
@@ -157,7 +160,7 @@ section {
   object-fit: contain;
 }
 
-#main {
+#IamErin {
   /* display: flex; */
   height: 100dvh;
   justify-content: flex-start;
@@ -198,7 +201,7 @@ section {
 #section1-exp {
   display: flex;
   align-items: flex-start;
-  color: #9d0000;
+  color: #A4110F
 }
 
 #section1-exp>div:first-child {
@@ -288,7 +291,7 @@ section {
   text-align: center;
   top: 100%;
   left: 0;
-  background-color: rgba(225, 79, 82, 0.5);
+  background-color: rgba(107, 51, 53, 0.5);
   width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
@@ -297,10 +300,12 @@ section {
 
 .submenu>a {
   padding: .8rem;
+  color: #ffffff;
+  text-decoration-line: none;
 }
 
 .submenu>a:hover {
-  background-color: rgb(107, 51, 53, 0.5);
+  background-color: rgba(49, 32, 32, 0.5);
 }
 
 .menu-item:hover .submenu {
@@ -319,9 +324,38 @@ section {
   z-index: 100;
 }
 
+
+#CoverStory {
+  background-color: #ffb4b4;
+  background-blend-mode: multiply;
+}
+
+#CoverStory .title {
+  display: inline-flex;
+  width: 100%;
+  height: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+#CoverStory .title>img {
+  height: auto;
+  width: clamp(80px, 10vw, 90px);
+}
+
+#CoverStory .logo {
+  width: clamp(180px, 10vw, 200px);
+  height: auto;
+}
+
+#CoverStory .logo-sm {
+  width: clamp(120px, 10vw, 150px);
+  height: auto;
+}
+
 @media (max-width: 1400px) {
 
-  #main {
+  #IamErin {
     align-content: center;
     justify-content: center;
   }
@@ -396,7 +430,7 @@ section {
 
 @media (max-width: 768px) {
 
-  #main {
+  #IamErin {
     align-content: center;
     justify-content: center;
   }

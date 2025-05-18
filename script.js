@@ -38,4 +38,7 @@ $(document).ready(function () {
         $('.menu').toggleClass('active');
     });
 
+    $('.submenu a').on('click', function () {
+        $('.menu').removeClass('active'); // 點擊連結時收起選單
+    });
 });
