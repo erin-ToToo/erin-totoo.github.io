@@ -38,7 +38,29 @@ $(document).ready(function () {
         $('.menu').toggleClass('active');
     });
 
-    $('.submenu a').on('click', function () {
-        $('.menu').removeClass('active'); // 點擊連結時收起選單
-    });
+
+    let touchMoved = false;
+
+    $('.submenu a')
+        .on('touchstart', function () {
+            touchMoved = false;
+        })
+        .on('touchmove', function () {
+            touchMoved = true;
+        })
+        .on('touchend', function (e) {
+            if (!touchMoved) {
+                $('.menu').removeClass('active');
+
+                const href = $(this).attr('href');
+                if (href && href !== '#') {
+                    window.location.href = href;
+                }
+            }
+        })
+        .on('click', function (e) {
+            e.preventDefault();
+        });
+
+
 });
