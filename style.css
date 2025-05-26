@@ -344,12 +344,12 @@ section {
 }
 
 #CoverStory .logo {
-  width: clamp(200px, 100vw, 220px);
+  width: clamp(180px, 30vw, 200px);
   height: auto;
 }
 
 #CoverStory .logo-sm {
-  width: clamp(100px, 100vw, 120px);
+  width: clamp(80px, 6vw, 120px);
   height: auto;
 }
 
@@ -375,6 +375,17 @@ section {
   padding: 0;
   transform: translateX(-50%);
   background: linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 20%, #00000000 20%, #00000000 80%, #1a1a1a 80%, #1a1a1a 100%);
+}
+
+@media (min-width: 1400px) {
+  .h-xxl-50 {
+    max-height: 50% !important;
+  }
+
+  .px-xxl-10percent {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 @media (max-width: 1400px) {
