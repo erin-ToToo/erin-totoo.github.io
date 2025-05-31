@@ -16,6 +16,10 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  font-size: 1.4rem;
+}
+
 .en-small {
   font-family: 'Book Antiqua';
 }
@@ -326,7 +330,7 @@ section {
 
 
 #CoverStory {
-  background-color: #ffb4b4;
+  background-color: #f0abac;
   background-blend-mode: multiply;
 }
 
@@ -360,31 +364,35 @@ section {
 
 .cover-horizontal-line {
   width: 80%;
-  height: 1px;
+  height: 1.5px;
   top: 50%;
-  left: 10%;
   transform: translateY(-50%);
   background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 40%, #00000000 40%, #00000000 60%, #1a1a1a 60%, #1a1a1a 100%);
 }
 
 .cover-vertical-line {
-  height: 80%;
-  width: 1px;
+  height: 100%;
+  width: 1.5px;
   left: 50%;
-  top: 10%;
+  top: 0;
   padding: 0;
   transform: translateX(-50%);
-  background: linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 20%, #00000000 20%, #00000000 80%, #1a1a1a 80%, #1a1a1a 100%);
+  background: linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 25%, #00000000 25%, #00000000 75%, #1a1a1a 75%, #1a1a1a 100%);
 }
 
 @media (min-width: 1400px) {
   .h-xxl-50 {
-    max-height: 50% !important;
+    height: 50% !important;
   }
 
-  .px-xxl-10percent {
-    padding-left: 10%;
-    padding-right: 10%;
+  .px-l {
+    padding-left: 15%;
+    padding-right: 5%;
+  }
+
+  .px-r {
+    padding-right: 15%;
+    padding-left: 5%;
   }
 }
 
@@ -468,9 +476,8 @@ section {
   }
 
   .cover-mobile-divider {
-    height: 2px;
-    background-color: #000;
-    opacity: 0.3;
+    height: 1.5px;
+    background-color: #1a1a1a;
     width: 80%;
     margin: 2rem auto;
   }
