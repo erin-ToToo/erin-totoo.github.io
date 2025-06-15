@@ -5,6 +5,7 @@ $(document).ready(function () {
     const imageCount = images.length;
     const interval = 4000;
     let imagesLoaded = 0;
+    let radarChart;
 
     $('img').on('dragstart', function (e) {
         e.preventDefault();
@@ -85,4 +86,61 @@ $(document).ready(function () {
         handleResponsiveBinding();
     });
 
+
+    function createRadarChart() {
+        new Chart(document.getElementById('skill-chart'), {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Adobe Illustrator CC',
+                    'Word / Excel / PowerPoint',
+                    'Adobe InDesign CC',
+                    'Canva',
+                    'Adobe Photoshop CC',
+                    'Capcut',
+                ],
+                datasets: [{
+                    label: '熟練度 (%)',
+                    data: [100, 60, 90, 70, 80, 90],
+                    fill: true,
+                    backgroundColor: 'rgba(245, 0, 0, 0.7)',
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                },
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        grid: { display: false },
+                        pointLabels: { display: false },
+                        ticks: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                },
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                }
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !radarChart) {
+                createRadarChart();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    observer.observe(document.getElementById('skill-chart'));
 });
+

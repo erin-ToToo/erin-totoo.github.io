@@ -18,6 +18,7 @@ h3 {
 
 h4 {
   font-size: 1.4rem;
+  line-height: 2rem;
 }
 
 .en-small {
@@ -195,13 +196,6 @@ section {
   width: 30%;
 }
 
-#section1-exp,
-#section1-motto {
-  font-size: 1.3rem;
-  line-height: 2.5rem;
-  text-wrap: nowrap;
-}
-
 #section1-exp {
   display: flex;
   align-items: flex-start;
@@ -342,7 +336,8 @@ section {
   align-items: center;
 }
 
-#CoverStory .title>img {
+#CoverStory .title>img,
+#section3-logo {
   height: auto;
   width: clamp(80px, 100vw, 90px);
 }
@@ -353,7 +348,7 @@ section {
 }
 
 #CoverStory .logo-sm {
-  width: clamp(80px, 6vw, 120px);
+  width: 120px;
   height: auto;
 }
 
@@ -363,7 +358,7 @@ section {
 }
 
 .cover-horizontal-line {
-  width: 80%;
+  width: clamp(1400px, 90vw, 1920px);
   height: 1.5px;
   top: 50%;
   transform: translateY(-50%);
@@ -380,18 +375,37 @@ section {
   background: linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 25%, #00000000 25%, #00000000 75%, #1a1a1a 75%, #1a1a1a 100%);
 }
 
+.section3-chart-bg {
+  width: auto;
+  height: 60%;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.section3-logo-sm {
+  width: 36px;
+  height: auto;
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
+
+#skill-chart {
+  height: 42% !important;
+  width: auto !important;
+}
+
 @media (min-width: 1400px) {
   .h-xxl-50 {
     height: 50% !important;
   }
 
   .px-l {
-    padding-left: 15%;
+    padding-left: 5%;
     padding-right: 5%;
   }
 
   .px-r {
-    padding-right: 15%;
+    padding-right: 5%;
     padding-left: 5%;
   }
 }
@@ -506,14 +520,6 @@ section {
 
   #section1-subtitle {
     font-size: 2rem;
-  }
-
-  #section1-exp,
-  #section1-motto {
-    font-size: 1rem;
-    line-height: 1rem;
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
   }
 
   #section1-intro {
